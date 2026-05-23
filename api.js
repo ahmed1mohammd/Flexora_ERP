@@ -9,7 +9,7 @@
  * 4. Multi-role support for Platform Admin, Gym Owner, Receptionist, and Coach.
  */
 
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://elegant-playfulness-production-f153.up.railway.app';
 
 class FlexoraAPIClient {
     constructor() {
