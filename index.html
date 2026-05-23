@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
+    <!-- SEO & Search Engine Optimization Tags for Egypt Gym Automation Market -->
+    <title>فليكسورا | Flexora - أتمتة صالات الجيم الفاخرة</title>
+    <meta name="description" content="فليكسورا هو النظام الرائد في مصر لأتمتة صالات الجيم واللياقة البدنية الفاخرة. تحكم مالي متقدم، إدارة اشتراكات ذكية بالـ QR، وتقارير MRR فورية. ابدأ نسختك التجريبية اليوم!">
+    <meta name="keywords" content="أتمتة الصالات الرياضية بمصر, برنامج إدارة الجيم, نظام إدارة الاشتراكات الرياضية, فليكسورا برو, سي ار ام صالات الجيم, إدارة الحسابات الرياضية للجيم, برنامج جيم مصر, Flexora Egypt">
+    <meta name="author" content="Flexora V2 Clean">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Facebook / LinkedIn) Tags -->
+    <meta property="og:title" content="فليكسورا | النظام الذكي لأتمتة صالات الجيم والتحكم المالي">
+    <meta property="og:description" content="ارتقِ بصالة الجيم الخاصة بك مع تقنيات فليكسورا الذكية لإدارة الأعضاء، أتمتة البوابات بالـ QR، وتقارير الحسابات الفورية.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200">
+    <meta property="og:url" content="http://localhost:3000">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Flexora Premium Gym Automation">
+    <meta name="twitter:description" content="تحكم مالي كامل وأتمتة ذكية لصالات الجيم الراقية بمصر بتقنية QR وتحليلات محاسبية متقدمة.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/gFwNY6cd/fav-Icon-2.png">
+
+    <!-- Premium Google Fonts (Cairo & Oswald) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- SweetAlert2 Sweet Theme -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Tailwind CSS v3 via Official Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'xs': '375px',
+                    'sm': '640px',
+                    'md': '768px',
+                    'lg': '1024px',
+                    'xl': '1280px',
+                },
+                extend: {
+                    colors: {
+                        bg_main: '#0A0A0A',
+                        surface: '#1A1A1A',
+                        border: '#2B2B2B',
+                        primary: '#E50914',
+                        hover_glow: '#FF2B36',
+                        text_muted: '#A3A3A3',
+                        text_light: '#F5F5F5',
+                    },
+                    fontFamily: {
+                        display: ['Oswald', 'sans-serif'],
+                        primary: ['Cairo', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-red': '0 0 20px rgba(229, 9, 20, 0.45)',
+                        'neon-glow': '0 0 35px rgba(255, 43, 54, 0.65)',
+                        'cyber-card': '0 4px 30px rgba(0, 0, 0, 0.8)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Centralized Premium Cyberpunk Luxury Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Prevent any horizontal page overflow */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+        /* Disable Hero section animations & force static layout on mobile */
+        @media (max-width: 767px) {
+            .hero-section .reveal-item {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+                animation: none !important;
+            }
+            .hero-section .animate-float-hero {
+                animation: none !important;
+                transform: none !important;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(229, 9, 20, 0.15) !important;
+            }
+            .hero-section * {
+                animation: none !important;
+                transition: none !important;
+            }
+            .hero-section #typing-hero-title .typing-cursor {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="cyberpunk-grid min-h-screen relative flex flex-col justify-between text-text_light font-primary bg-bg_main">
+    <!-- Interactive Mouse Spotlight Follower -->
+    <div class="mouse-spotlight"></div>
+
+    <!-- Interactive Canvas-Based Glowing Grid Background -->
+    <canvas id="cyber-grid-canvas" class="absolute inset-0 pointer-events-none -z-20"></canvas>
+
+    <!-- Top Glow Overlay -->
+    <div class="absolute top-0 left-1/4 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-primary/10 rounded-full blur-[80px] sm:blur-[140px] pointer-events-none -z-10"></div>
+    <div class="absolute top-1/3 right-10 w-[200px] sm:w-[400px] h-[200px] sm:h-[400px] bg-hover_glow/5 rounded-full blur-[70px] sm:blur-[120px] pointer-events-none -z-10"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header sticky top-0 z-50 backdrop-blur-md bg-bg_main/85 border-b border-border/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Branding Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center group" aria-label="الرئيسية">
+                        <img src="https://i.ibb.co/qF44zwks/logo1-1.png" alt="فليكسورا" class="h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform duration-300 hover:scale-105 filter drop-shadow-[0_0_12px_rgba(229,9,20,0.5)]">
+                    </a>
+                </div>
+
+                <!-- Mid Navbar (RTL Layout) -->
+                <nav class="desktop-nav-links hidden md:flex items-center gap-8">
+                    <a href="#features" class="text-text_muted hover:text-primary transition-colors text-sm font-semibold">المميزات</a>
+                    <a href="#pricing-section" class="text-text_muted hover:text-primary transition-colors text-sm font-semibold">الأسعار والخطط</a>
+                    <a href="#registration-section" class="text-text_muted hover:text-primary transition-colors text-sm font-semibold">احجز نسختك</a>
+                </nav>
+
+                <!-- Header Action Buttons -->
+                <div class="flex items-center gap-4">
+                    <!-- Desktop Action Buttons -->
+                    <div class="hidden sm:flex items-center gap-4">
+                        <a href="#registration-section" class="px-6 py-2.5 rounded-lg bg-primary text-text_light text-sm font-semibold tracking-wide hover:bg-hover_glow transition-all shadow-neon-red hover:shadow-neon-glow animate-pulse-glow">
+                            النسخة التجريبية
+                        </a>
+                    </div>
+
+                    <!-- Mobile Hamburger Menu Button -->
+                    <button id="mobile-menu-toggle" class="mobile-nav-toggle flex items-center justify-center w-10 h-10 rounded-lg border border-border bg-surface text-text_light md:hidden hover:border-primary transition-all" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Navigation Drawer & Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+    <div id="mobile-menu-drawer" class="mobile-menu-drawer" dir="rtl">
+        <div class="mobile-drawer-header flex items-center justify-between p-4 border-b border-border/80 bg-surface">
+            <a href="index.html" class="flex items-center group" aria-label="الرئيسية">
+                <img src="https://i.ibb.co/qF44zwks/logo1-1.png" alt="فليكسورا" class="h-14 w-auto object-contain">
+            </a>
+            <button id="mobile-menu-close" class="mobile-drawer-close w-10 h-10 flex items-center justify-center rounded-lg border border-border text-text_light hover:border-primary" aria-label="Close Menu">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+        <div class="mobile-drawer-links flex flex-col p-6 gap-6">
+            <a href="#features" class="mobile-drawer-link flex items-center gap-3 text-text_muted hover:text-primary transition-colors py-2 text-base font-bold">
+                <i class="fa-solid fa-bolt text-primary text-sm"></i>
+                <span>المميزات</span>
+            </a>
+            <a href="#pricing-section" class="mobile-drawer-link flex items-center gap-3 text-text_muted hover:text-primary transition-colors py-2 text-base font-bold">
+                <i class="fa-solid fa-tags text-primary text-sm"></i>
+                <span>الأسعار والخطط</span>
+            </a>
+            <a href="#registration-section" class="mobile-drawer-link flex items-center gap-3 text-text_muted hover:text-primary transition-colors py-2 text-base font-bold">
+                <i class="fa-solid fa-calendar-check text-primary text-sm"></i>
+                <span>احجز نسختك</span>
+            </a>
+        </div>
+        <div class="mobile-drawer-actions p-6 border-t border-border/50">
+            <a href="#registration-section" class="w-full text-center py-3.5 rounded-lg bg-primary text-text_light text-sm font-semibold tracking-wide hover:bg-hover_glow transition-all shadow-neon-red hover:shadow-neon-glow block">
+                طلب النسخة التجريبية
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section (Responsive Stacking Mobile-First) -->
+        <section class="hero-section relative py-12 sm:py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Content (Single column on mobile, stacks below image) -->
+                <div class="lg:col-span-7 text-right flex flex-col justify-center order-2 lg:order-1">
+                    <div class="inline-flex self-start items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-border/80 mb-6 reveal-item">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                        <span class="text-[10px] sm:text-xs text-primary font-bold tracking-wide uppercase font-display">أتمتة رقمية ذكية • تحكم مالي مطلق</span>
+                    </div>
+
+                    <h1 class="hero-title text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight mb-6 reveal-item delay-100 flex flex-wrap items-center" id="typing-hero-title" style="min-height: 2.2em;">
+                        أدِر صالتك الرياضية بمنظومة ذكية وفخامة تشغيلية متكاملة
+                    </h1>
+                    
+                    <p class="hero-description text-sm sm:text-base lg:text-lg text-text_muted mb-8 leading-relaxed reveal-item delay-200">
+                        تمنحك منصة فليكسورا السحابية سيادة مالية متطورة وأتمتة شاملة لملفات المشتركين عبر بوابات التحقق الرقمي بالرمز المشفر (QR Code). دقة محاسبية، استقرار تقني، وبيئة تشغيلية آمنة تليق بأندية اللياقة البدنية النخبوية في مصر.
+                    </p>
+
+                    <!-- CTAs Alignment (Touch-friendly minimum tap targets) -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8 hero-ctas reveal-item delay-300">
+                        <a href="#registration-section" class="px-8 py-4 min-h-[48px] rounded-lg bg-primary text-text_light font-bold hover:bg-hover_glow shadow-neon-red hover:shadow-neon-glow transition-all flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-bolt text-lg"></i>
+                            <span>احجز نسختك التجريبية</span>
+                        </a>
+                    </div>
+
+                    <!-- Visual Stats Points -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-border/50 reveal-item delay-400">
+                        <div class="text-right">
+                            <h3 class="text-xl sm:text-2xl font-bold font-display text-text_light">+120</h3>
+                            <p class="text-[10px] sm:text-xs text-text_muted">صالة رياضية معتمدة في مصر</p>
+                        </div>
+                        <div class="text-right">
+                            <h3 class="text-xl sm:text-2xl font-bold font-display text-text_light">%99.9</h3>
+                            <p class="text-[10px] sm:text-xs text-text_muted">معدل استقرار وتوافر خادم الـ API</p>
+                        </div>
+                        <div class="text-right">
+                            <h3 class="text-xl sm:text-2xl font-bold font-display text-text_light">0.3 ثانية</h3>
+                            <p class="text-[10px] sm:text-xs text-text_muted">زمن توليد وتشفير رموز الـ QR</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Mockup Showcase (Stacks on top on mobile, order 1) -->
+                <div class="lg:col-span-5 flex justify-center items-center order-1 lg:order-2 reveal-item delay-300">
+                    <div class="relative w-full max-w-md sm:max-w-lg lg:max-w-full">
+                        <!-- Glow Backdrop -->
+                        <div class="absolute inset-0 bg-primary/20 rounded-full blur-[80px] pointer-events-none -z-10"></div>
+                        
+                        <!-- Premium Glassmorphic Mockup Container -->
+                        <div class="relative w-full p-2 sm:p-3 bg-surface/50 border border-border/85 rounded-2xl shadow-cyber-card overflow-hidden group animate-float-hero">
+                            <!-- Subtle Glow Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none"></div>
+                            
+                            <!-- Software Mockup Image (Perfect scaling without clipping) -->
+                            <img src="./images/multi_device_showcase.png" alt="نظام فليكسورا المتجاوب على جميع الأجهزة" 
+                                class="w-full h-auto rounded-xl shadow-neon-red hover:shadow-neon-glow hover:scale-[1.01] transition-all duration-500 border border-border/60 object-contain">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Core Benefits Section (Tailwind Responsive Grid System) -->
+        <section id="features" class="py-16 sm:py-20 bg-surface/30 border-y border-border/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12 sm:reveal-item">
+                    <h2 class="text-xs text-primary font-bold tracking-widest uppercase mb-3">ركائز تميز فليكسورا</h2>
+                    <h3 class="text-2xl sm:text-4xl font-extrabold text-text_light">هندسة برمجية بنيت للصالات النخبوية</h3>
+                    <p class="text-text_muted mt-4 text-xs sm:text-base">ندمج بين فخامة الواجهات التكتيكية والقوة الحسابية لنمنحك السيطرة المطلقة على موارد منشأتك الرياضية.</p>
+                </div>
+
+                <!-- Features Pure Tailwind Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Column 1: Financial Control -->
+                    <div class="feature-card p-6 rounded-2xl flex flex-col justify-between group relative overflow-hidden reveal-item delay-100 bg-surface/60 border border-border/50">
+                        <span class="absolute top-4 left-4 w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:animate-pulse transition-all"></span>
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-2xl mb-5 group-hover:bg-primary/20 group-hover:scale-105 group-hover:shadow-[0_0_15px_rgba(229,9,20,0.3)] transition-all duration-300">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-text_light mb-2">الحسابات المركزية والخزنة الموحدة</h4>
+                            <p class="text-text_muted text-xs leading-relaxed">
+                                أدوات محاسبية متقدمة لقياس الإيرادات المتكررة، وتتبع التدفقات النقدية والمصروفات بدقة متناهية تفصل صافي الأرباح تلقائياً.
+                            </p>
+                            <img src="./images/financial_analytics.png" alt="الحسابات المركزية والخزنة الموحدة" 
+                                class="w-full h-36 sm:h-44 object-cover rounded-xl mt-4 border border-border/60 group-hover:border-primary/50 transition-all duration-500">
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Desktop Smart Scanner -->
+                    <div class="feature-card p-6 rounded-2xl flex flex-col justify-between group relative overflow-hidden reveal-item delay-200 bg-surface/60 border border-border/50">
+                        <span class="absolute top-4 left-4 w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:animate-pulse transition-all"></span>
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-2xl mb-5 group-hover:bg-primary/20 group-hover:scale-105 group-hover:shadow-[0_0_15px_rgba(229,9,20,0.3)] transition-all duration-300">
+                                <i class="fa-solid fa-barcode"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-text_light mb-2">نظام التحقق المكتبي المتكامل (Scanner)</h4>
+                            <p class="text-text_muted text-xs leading-relaxed">
+                                توافق تام وفوري مع أجهزة المسح الضوئي الخارجية (USB QR/Barcode Scanners) لسرعة معالجة الحضور عند بوابات الاستقبال.
+                            </p>
+                            <img src="./images/scanner.png" alt="نظام التحقق المكتبي المتكامل (Scanner)" 
+                                class="w-full h-36 sm:h-44 object-cover rounded-xl mt-4 border border-border/60 group-hover:border-primary/50 transition-all duration-500">
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Mobile Intelligent Check -->
+                    <div class="feature-card p-6 rounded-2xl flex flex-col justify-between group relative overflow-hidden reveal-item delay-300 bg-surface/60 border border-border/50">
+                        <span class="absolute top-4 left-4 w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:animate-pulse transition-all"></span>
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-2xl mb-5 group-hover:bg-primary/20 group-hover:scale-105 group-hover:shadow-[0_0_15px_rgba(229,9,20,0.3)] transition-all duration-300">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-text_light mb-2">الفحص الرقمي المتجاوب (Scan Mobile)</h4>
+                            <p class="text-text_muted text-xs leading-relaxed">
+                                واجهة ويب ذكية تتيح لطاقم العمل مسح الرموز والتحقق من صلاحية الاشتراكات مباشرة وبمرونة كاملة عبر كاميرا أي هاتف محمول.
+                            </p>
+                            <img src="./images/scan.png" alt="الفحص الرقمي المتجاوب (Scan Mobile)" 
+                                class="w-full h-36 sm:h-44 object-cover rounded-xl mt-4 border border-border/60 group-hover:border-primary/50 transition-all duration-500">
+                        </div>
+                    </div>
+
+                    <!-- Column 4: Access Automation -->
+                    <div class="feature-card p-6 rounded-2xl flex flex-col justify-between group relative overflow-hidden reveal-item delay-400 bg-surface/60 border border-border/50">
+                        <span class="absolute top-4 left-4 w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:animate-pulse transition-all"></span>
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-2xl mb-5 group-hover:bg-primary/20 group-hover:scale-105 group-hover:shadow-[0_0_15px_rgba(229,9,20,0.3)] transition-all duration-300">
+                                <i class="fa-solid fa-qrcode"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-text_light mb-2">نظام الاتصال المؤتمت (WhatsApp Gateway)</h4>
+                            <p class="text-text_muted text-xs leading-relaxed">
+                                أتمتة فورية وديناميكية؛ بمجرد تسجيل العضو، يتم إرسال بيانات الباقة ورمز الـ QR مباشرة إلى حسابه على الواتساب، مع تذكير آلي قبل انتهاء الاشتراك.
+                            </p>
+                            <img src="./images/smart_gate_access.png" alt="نظام الاتصال المؤتمت (WhatsApp Gateway)" 
+                                class="w-full h-36 sm:h-44 object-cover rounded-xl mt-4 border border-border/60 group-hover:border-primary/50 transition-all duration-500">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Dynamic Pricing Section (Pure Tailwind Responsive Breakpoints) -->
+        <section id="pricing-section" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:reveal-item">
+                <h2 class="text-xs text-primary font-bold tracking-widest uppercase mb-3">الخطط وإصدارات النظام</h2>
+                <h3 class="text-2xl sm:text-4xl font-extrabold text-text_light">باقات مرنة تدعم استقرار ونمو أعمالك</h3>
+                <p class="text-text_muted mt-4 text-xs sm:text-base">عروض برمجية متكاملة تتوافق مع تطلعاتك. (الأسعار الموضحة يتم تحديثها ديناميكياً من لوحة التحكم لضمان المرونة المطلقة)</p>
+            </div>
+
+            <!-- Pricing Grid via pure Tailwind layout -->
+            <div id="dynamic-pricing-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Dynamic cards will be injected here by JS -->
+            </div>
+        </section>
+
+        <!-- Embedded Gym Registration Section ("احجز نسختك" Form) -->
+        <section id="registration-section" class="py-16 sm:py-20 max-w-4xl mx-auto px-4">
+            <div class="p-6 sm:p-12 rounded-3xl bg-surface border border-border shadow-cyber-card relative reveal-item">
+                <div class="absolute top-4 left-4 text-[9px] font-bold text-primary font-display bg-primary/10 px-3 py-1 rounded border border-primary/20">
+                    بوابة الحجز المباشر في مصر
+                </div>
+
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-text_light mb-3">احجز نسختك الآن</h3>
+                    <p class="text-xs sm:text-sm text-text_muted">قم بتسجيل بيانات صالتك الرياضية، وسيتولى فريقنا التقني بناء وتهيئة منظومتك المخصصة وتفعيلها بالكامل خلال 24 ساعة للمعاينة.</p>
+                </div>
+
+                <!-- Registration Form -->
+                <form id="landing-register-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Gym Name -->
+                        <div class="text-right">
+                            <label for="gymName" class="block text-xs font-semibold text-text_light mb-2">اسم الصالة الرياضية *</label>
+                            <!-- Font size 16px (text-base) on mobile to strictly prevent automatic iOS zoom -->
+                            <input type="text" id="gymName" required placeholder="مثال: صالة تيتان فيتنس" 
+                                class="w-full px-4 py-3 min-h-[48px] rounded-lg border border-border bg-bg_main text-text_light text-base md:text-sm focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(229,9,20,0.3)] transition-all">
+                        </div>
+                        
+                        <!-- Owner Name -->
+                        <div class="text-right">
+                            <label for="ownerName" class="block text-xs font-semibold text-text_light mb-2">اسم المالك بالكامل *</label>
+                            <input type="text" id="ownerName" required placeholder="مثال: كابتن أحمد محمد" 
+                                class="w-full px-4 py-3 min-h-[48px] rounded-lg border border-border bg-bg_main text-text_light text-base md:text-sm focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(229,9,20,0.3)] transition-all">
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="text-right">
+                            <label for="email" class="block text-xs font-semibold text-text_light mb-2">البريد الإلكتروني للعمل *</label>
+                            <input type="email" id="email" required placeholder="owner@gym.com" 
+                                class="w-full px-4 py-3 min-h-[48px] rounded-lg border border-border bg-bg_main text-text_light text-base md:text-sm focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(229,9,20,0.3)] transition-all">
+                        </div>
+
+                        <!-- Selected Plan -->
+                        <div class="text-right">
+                            <label for="planId" class="block text-xs font-semibold text-text_light mb-2">الباقة المطلوبة *</label>
+                            <select id="planId" required class="w-full px-4 py-3 min-h-[48px] rounded-lg border border-border bg-bg_main text-text_light text-base md:text-sm focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(229,9,20,0.3)] transition-all">
+                                <option value="" disabled selected>اختر الباقة...</option>
+                            </select>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="text-right">
+                            <label for="phone" class="block text-xs font-semibold text-text_light mb-2">رقم الهاتف / الواتساب *</label>
+                            <input type="tel" id="phone" required placeholder="مثال: 01012345678" 
+                                class="w-full px-4 py-3 min-h-[48px] rounded-lg border border-border bg-bg_main text-text_light text-base md:text-sm focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(229,9,20,0.3)] transition-all">
+                        </div>
+
+                        <!-- Password -->
+                        <div class="text-right">
+                            <label for="password" class="block text-xs font-semibold text-text_light mb-2">كلمة المرور *</label>
+                            <input type="password" id="password" required placeholder="أدخل كلمة مرور قوية لحساب صالتك" 
+                                class="w-full px-4 py-3 min-h-[48px] rounded-lg border border-border bg-bg_main text-text_light text-base md:text-sm focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(229,9,20,0.3)] transition-all">
+                        </div>
+
+                        <!-- Address -->
+                        <div class="text-right">
+                            <label for="address" class="block text-xs font-semibold text-text_light mb-2">عنوان الفرع *</label>
+                            <input type="text" id="address" required placeholder="مثال: 12 شارع التسعين، التجمع الخامس، القاهرة" 
+                                class="w-full px-4 py-3 min-h-[48px] rounded-lg border border-border bg-bg_main text-text_light text-base md:text-sm focus:outline-none focus:border-primary focus:shadow-[0_0_15px_rgba(229,9,20,0.3)] transition-all">
+                        </div>
+                    </div>
+
+                    <!-- CTA Submit Button -->
+                    <div class="pt-4">
+                        <button type="submit" class="w-full py-4 min-h-[48px] rounded-lg bg-primary hover:bg-hover_glow shadow-neon-red hover:shadow-neon-glow font-bold text-text_light text-xs transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-sm"></i>
+                            <span>تأكيد طلب الإنشاء والتفعيل المبدئي</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Page Block -->
+    <footer class="bg-[#070707] relative overflow-hidden border-t border-border/80 pt-16 pb-28 md:pb-16 text-right">
+        <!-- Futuristic neon top accent line -->
+        <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+        
+        <!-- Cybernetic light glow element -->
+        <div class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-0 left-0 w-[200px] h-[200px] bg-emerald-500/3 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+                
+                <!-- Column 1: Brand & Slogan (4 Cols) -->
+                <div class="lg:col-span-4 space-y-6">
+                    <a href="#" class="inline-block group">
+                        <img src="https://i.ibb.co/qF44zwks/logo1-1.png" alt="فليكسورا" 
+                             class="h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105 filter drop-shadow-[0_0_12px_rgba(229,9,20,0.55)]">
+                    </a>
+                    <p class="text-xs text-text_muted leading-relaxed max-w-sm">
+                        المنصة الرائدة في مصر لإدارة صالات اللياقة البدنية والتحقق الرقمي المشفر. ندمج بين فخامة التصميم والذكاء التكنولوجي التشغيلي لنقود مستقبل الإدارة الرياضية.
+                    </p>
+                    
+                    <!-- Premium Cyber Social Links -->
+                    <div id="dynamic-social-matrix" class="flex items-center gap-3 justify-start pt-2 min-h-[40px]">
+                        <!-- Rendered by Hydration Script -->
+                    </div>
+                    <!-- Legal Credentials -->
+                    <div id="dynamic-legal-footer"></div>
+                </div>
+
+                <!-- Column 2: System Quick Links (2 Cols) -->
+                <div class="lg:col-span-2 space-y-5">
+                    <h5 class="text-xs font-bold text-text_light uppercase tracking-wider border-r-2 border-primary pr-2.5">روابط النظام</h5>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="#features" class="text-text_muted hover:text-primary transition-all duration-300 flex items-center gap-1.5 hover:-translate-x-1 transform inline-block">
+                                <i class="fa-solid fa-chevron-left text-[8px] text-primary/70"></i>
+                                <span>المميزات الإستراتيجية</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pricing-section" class="text-text_muted hover:text-primary transition-all duration-300 flex items-center gap-1.5 hover:-translate-x-1 transform inline-block">
+                                <i class="fa-solid fa-chevron-left text-[8px] text-primary/70"></i>
+                                <span>الخطط والأسعار</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#registration-section" class="text-text_muted hover:text-primary transition-all duration-300 flex items-center gap-1.5 hover:-translate-x-1 transform inline-block">
+                                <i class="fa-solid fa-chevron-left text-[8px] text-primary/70"></i>
+                                <span>احجز نسختك الآن</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Support & Contact (3 Cols) -->
+                <div class="lg:col-span-3 space-y-5">
+                    <h5 class="text-xs font-bold text-text_light uppercase tracking-wider border-r-2 border-primary pr-2.5">الدعم والتواصل</h5>
+                    <ul class="space-y-3.5 text-xs text-text_muted">
+                        <li class="flex items-center gap-3 justify-start">
+                            <span class="w-7 h-7 rounded-lg bg-surface border border-border/80 flex items-center justify-center text-primary">
+                                <i class="fa-solid fa-phone text-[10px]"></i>
+                            </span>
+                            <span id="dynamic-support-phone" class="font-mono text-[11px]" dir="ltr">+20 101 234 5678</span>
+                        </li>
+                        <li class="flex items-center gap-3 justify-start">
+                            <span class="w-7 h-7 rounded-lg bg-surface border border-border/80 flex items-center justify-center text-primary">
+                                <i class="fa-solid fa-envelope text-[10px]"></i>
+                            </span>
+                            <span id="dynamic-support-email" class="font-mono text-[11px] hover:text-primary transition-colors cursor-pointer">support@flexora.com</span>
+                        </li>
+                        <li class="flex items-start gap-3 justify-start">
+                            <span class="w-7 h-7 mt-0.5 rounded-lg bg-surface border border-border/80 flex items-center justify-center text-primary shrink-0">
+                                <i class="fa-solid fa-location-dot text-[10px]"></i>
+                            </span>
+                            <span class="leading-relaxed">التجمع الخامس، القاهرة، جمهورية مصر العربية</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: System Status Widget (3 Cols) -->
+                <div class="lg:col-span-3 space-y-5">
+                    <h5 class="text-xs font-bold text-text_light uppercase tracking-wider border-r-2 border-emerald-500 pr-2.5">حالة الأنظمة والجاهزية</h5>
+                    <div class="p-4 rounded-xl border border-border bg-[#0B0B0B] space-y-3.5 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-[50px] h-[50px] bg-emerald-500/5 rounded-full blur-[20px]"></div>
+                        
+                        <!-- Pulse Indicator -->
+                        <div class="flex items-center gap-2.5 justify-start">
+                            <span class="relative flex h-2 w-2">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                            </span>
+                            <span class="text-xs font-semibold text-emerald-400">جميع الخوادم تعمل بكفاءة</span>
+                        </div>
+                        
+                        <!-- Status Details -->
+                        <div class="space-y-2 text-[10px] text-text_muted border-t border-border/50 pt-2.5 leading-relaxed">
+                            <div class="flex items-center gap-1.5 justify-start">
+                                <i class="fa-solid fa-shield-halved text-emerald-500 text-[11px]"></i>
+                                <span>اتصال مشفر بـ Supabase SSL</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 justify-start">
+                                <i class="fa-solid fa-clock text-text_muted text-[10px]"></i>
+                                <span>وقت التشغيل الفعلي: 99.98%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Divider -->
+            <div class="border-t border-border/40 mt-12 pt-8 flex flex-col md:flex-row gap-6 justify-between items-center">
+                
+                <!-- Copyrights -->
+                <div class="text-center md:text-right space-y-1">
+                    <p class="text-[11px] text-text_muted">
+                        &copy; 2026 فليكسورا لأتمتة صالات الجيم بمصر. جميع الحقوق محفوظة.
+                    </p>
+                    <p class="text-[9px] text-text_muted/60 leading-normal">
+                        العلامات التجارية والأسماء المعروضة هي ملك لأصحابها المعنيين.
+                    </p>
+                </div>
+                
+                <!-- Powered By Snap Tech Badge -->
+                <a href="#" class="flex items-center gap-3 px-5 py-2.5 rounded-xl border border-primary/30 bg-primary/5 hover:border-primary/60 hover:bg-primary/10 transition-all duration-300 group shadow-[0_0_15px_rgba(229,9,20,0.15)]" id="snaptech-footer-brand">
+                    <div class="flex flex-col text-right">
+                        <span class="text-[9px] text-text_muted/70 tracking-widest uppercase">Powered by</span>
+                        <span class="font-bold text-primary text-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-bolt text-[11px] text-yellow-400"></i>
+                            Snap Tech
+                        </span>
+                    </div>
+                    <!-- Logo Placeholder -->
+                    <div class="w-9 h-9 rounded-full bg-black border border-primary/50 flex items-center justify-center overflow-hidden">
+                        <img id="snaptech-logo" src="https://i.ibb.co/NdqcG4qr/logo1.png" alt="Snap Tech Logo" class="w-full h-full object-cover">
+                    </div>
+                </a>
+            </div></div>
+        </div>
+    </footer>
+
+    <!-- Mobile-First Sticky Bottom CTA Bar (Only visible on small devices) -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md border-t border-border p-3 md:hidden flex items-center justify-between gap-4 px-4 shadow-[0_-8px_25px_rgba(0,0,0,0.8)]">
+        <div class="flex flex-col text-right">
+            <span class="text-[9px] text-text_muted font-semibold">ابدأ رحلتك مجاناً</span>
+            <span class="text-xs text-primary font-bold">فليكسورا أوتوميشن V2</span>
+        </div>
+        <a href="#registration-section" class="px-5 py-2.5 rounded-lg bg-primary hover:bg-hover_glow text-text_light text-xs font-bold transition-all shadow-neon-red text-center min-h-[40px] flex items-center justify-center">
+            احجز نسختك
+        </a>
+    </div>
+
+    <!-- Core HTTP Communication Bridge (api.js) -->
+    <script src="api.js"></script>
+
+    <!-- Interactive Logic & Dynamic pricing hydration script -->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', async () => {
+            
+            // 1. Dynamic Pricing Hydration Engine (Fully dynamic from DB)
+            const hydratePrices = async () => {
+                const grid = document.getElementById('dynamic-pricing-grid');
+                if (!grid) return;
+
+                try {
+                    // Call the backend API using our premium client
+                    const response = await window.FlexoraAPI.getPlans();
+                    const plans = response.data.plans;
+                    
+                    grid.innerHTML = ''; // Clear loaders
+
+                    // Populate Select Dropdown in Registration Form
+                    const planSelect = document.getElementById('planId');
+                    if (planSelect) {
+                        planSelect.innerHTML = '<option value="" disabled selected>اختر الباقة...</option>';
+                        plans.forEach(plan => {
+                            const opt = document.createElement('option');
+                            opt.value = plan.id;
+                            opt.textContent = `${plan.planName} - ${plan.price} ج.م / ${plan.durationInDays} يوم`;
+                            planSelect.appendChild(opt);
+                        });
+                    }
+
+                    // Dynamic Grid Centering based on number of plans
+                    if (plans.length === 1) {
+                        grid.className = 'grid grid-cols-1 max-w-sm mx-auto gap-6';
+                    } else if (plans.length === 2) {
+                        grid.className = 'grid grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto gap-6';
+                    } else if (plans.length === 3) {
+                        grid.className = 'grid grid-cols-1 md:grid-cols-3 max-w-5xl mx-auto gap-6';
+                    } else {
+                        grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6';
+                    }
+
+                    plans.forEach((plan, index) => {
+                        const featuresListHtml = (plan.features || []).map(feature => `
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[10px] text-primary"></i>
+                                <span>${feature}</span>
+                            </li>
+                        `).join('');
+
+                        // Dynamic styling based on index (simulating Best Value / Best Seller accents)
+                        let cardStyleClass = 'bg-surface border border-border/60 hover:border-primary/50 transition-colors duration-300';
+                        let accentHtml = '';
+                        
+                        if (index === 1) { // 2nd plan is best seller
+                            cardStyleClass = 'bg-surface border border-primary/45 shadow-neon-red/10';
+                            accentHtml = `
+                            <div class="absolute top-0 left-0 bg-primary text-text_light text-[9px] font-black px-3.5 py-1 rounded-br-lg uppercase tracking-wider">
+                                الأكثر طلباً
+                            </div>`;
+                        } else if (index === 3) { // 4th plan is best value
+                            cardStyleClass = 'bg-surface border border-emerald-500/30';
+                            accentHtml = `
+                            <div class="absolute top-0 left-0 bg-emerald-500 text-bg_main text-[9px] font-black px-3.5 py-1 rounded-br-lg uppercase tracking-wider">
+                                أفضل قيمة
+                            </div>`;
+                        }
+
+                        const cardHtml = `
+                        <div class="reveal-item delay-${(index + 1) * 100}">
+                            <div class="p-6 rounded-2xl glass-card text-right flex flex-col justify-between h-full relative overflow-hidden min-h-[400px] ${cardStyleClass}">
+                                ${accentHtml}
+                                <div class="space-y-6">
+                                    <div>
+                                        <span class="text-xs text-text_muted font-semibold block uppercase">${plan.durationInDays} يوم</span>
+                                        <h4 class="text-xl font-bold text-text_light mt-1">${plan.planName || plan.name}</h4>
+                                    </div>
+                                    
+                                    <div class="border-y border-border/50 py-4">
+                                        <div class="text-right">
+                                            <span class="font-bold text-3xl sm:text-4xl text-primary font-display text-glow">${plan.price}</span>
+                                            <span class="text-xs text-text_light font-semibold mr-1">ج.م / ${plan.durationInDays} يوم</span>
+                                        </div>
+                                        ${plan.description ? `<span class="text-[10px] text-text_muted block mt-1">${plan.description}</span>` : ''}
+                                    </div>
+
+                                    <ul class="space-y-3.5 text-xs text-text_muted">
+                                        ${featuresListHtml || `
+                                        <li class="flex items-center gap-2 opacity-50">
+                                            <i class="fa-solid fa-info-circle text-[10px]"></i>
+                                            <span>تفاصيل الميزات سيتم إضافتها قريباً</span>
+                                        </li>`}
+                                    </ul>
+                                </div>
+
+                                <div class="mt-6 pt-4 border-t border-border/30 flex flex-col items-center gap-3">
+                                    <a href="#registration-section" class="w-full block py-3 text-center rounded-lg border border-border hover:border-primary text-text_light text-xs font-bold transition-all min-h-[44px] flex items-center justify-center">
+                                        احجز باقتك الآن
+                                    </a>
+                                    <a href="https://wa.me/201012345678" target="_blank" rel="noopener noreferrer" 
+                                       class="inline-flex items-center gap-1.5 text-[11px] text-text_muted hover:text-[#25D366] transition-colors duration-300">
+                                        <i class="fa-brands fa-whatsapp text-sm text-[#25D366]"></i>
+                                        <span>تواصل مع الدعم مباشرة</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        `;
+
+                        grid.insertAdjacentHTML('beforeend', cardHtml);
+                    });
+
+                } catch (error) {
+                    console.error("Pricing hydration failure:", error);
+                    grid.innerHTML = '<div class="col-span-full text-center text-text_muted text-sm">تعذر تحميل الخطط من الخادم. يرجى المحاولة لاحقاً.</div>';
+                }
+            };
+
+            // Hydrate prices immediately on page load
+            await hydratePrices();
+
+            // 2. Embedded Form registration handling mapping to window.FlexoraAPI.register
+            const registerForm = document.getElementById('landing-register-form');
+            if (registerForm) {
+                registerForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const gymName = document.getElementById('gymName').value;
+                    const ownerName = document.getElementById('ownerName').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const planId = document.getElementById('planId').value;
+                    const password = document.getElementById('password').value;
+                    const address = document.getElementById('address').value;
+
+                    try {
+                        const result = await window.FlexoraAPI.register({
+                            gymName,
+                            ownerName,
+                            email,
+                            phone,
+                            planId,
+                            password,
+                            address
+                        });
+
+                        // Show success alert using premium SweetAlert2 matching deep dark crimson theme
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'تم استلام طلبك بنجاح!',
+                            html: `
+                                <div class="text-right space-y-2 text-sm leading-relaxed" dir="rtl">
+                                    <p class="text-text_light font-semibold">اسم الصالة: <strong>${result.gym.name}</strong></p>
+                                    <p class="text-text_muted">البريد الإلكتروني المسجل: <span class="font-mono text-primary font-bold text-xs">${result.gym.email}</span></p>
+                                    <p class="text-text_muted">رقم الهاتف: <span class="font-mono text-xs text-text_light">${phone}</span></p>
+                                    <p class="text-[11px] text-text_muted mt-2 border-t border-border/40 pt-2">
+                                        تم تسجيل طلبك وحسابك الآن قيد الانتظار لموافقة الإدارة (PENDING). سيقوم مستشار أتمتة فليكسورا بالتواصل معك قريباً لتفعيل النظام بالكامل وإرسال تفاصيل التفعيل لعنوان فرعكم: <strong class="text-text_light">${address}</strong>.
+                                    </p>
+                                </div>
+                            `,
+                            confirmButtonText: 'حسناً، فهمت',
+                            background: '#1A1A1A',
+                            color: '#F5F5F5',
+                            confirmButtonColor: '#E50914'
+                        });
+
+                        // Reset input values in form
+                        registerForm.reset();
+
+                    } catch (error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'فشل إرسال الطلب',
+                            text: error.message || 'حدث خطأ غير متوقع أثناء تسجيل صالتك.',
+                            confirmButtonText: 'موافق',
+                            background: '#1A1A1A',
+                            color: '#F5F5F5',
+                            confirmButtonColor: '#E50914'
+                        });
+                    }
+                });
+            }
+
+            // 3. Premium Mobile Menu Toggle & Navigation Controller
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileDrawerLinks = document.querySelectorAll('.mobile-drawer-link');
+
+            const openMobileMenu = () => {
+                mobileMenuDrawer.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Lock body scroll when drawer is open
+                
+                const icon = mobileMenuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            };
+
+            const closeMobileMenu = () => {
+                mobileMenuDrawer.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Unlock scroll
+                
+                const icon = mobileMenuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            };
+
+            if (mobileMenuToggle && mobileMenuDrawer && mobileMenuOverlay) {
+                mobileMenuToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (mobileMenuDrawer.classList.contains('active')) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
+                    }
+                });
+
+                if (mobileMenuClose) {
+                    mobileMenuClose.addEventListener('click', closeMobileMenu);
+                }
+
+                mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+                // Close drawer when clicking any link
+                mobileDrawerLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        closeMobileMenu();
+                    });
+                });
+            }
+
+            // 4. Dynamic Flow-Typing Hero Title Animation
+            const heroTitleText = "أدِر صالتك الرياضية بمنظومة ذكية وفخامة تشغيلية متكاملة";
+            const heroTitleContainer = document.getElementById('typing-hero-title');
+            if (heroTitleContainer) {
+                if (window.innerWidth < 768) {
+                    heroTitleContainer.textContent = heroTitleText;
+                    heroTitleContainer.style.minHeight = 'auto';
+                } else {
+                    heroTitleContainer.innerHTML = '';
+                    
+                    const cursor = document.createElement('span');
+                    cursor.className = 'typing-cursor';
+                    
+                    const words = heroTitleText.split(' ');
+                    let index = 0;
+                    
+                    function typeNextWord() {
+                        if (index < words.length) {
+                            const word = words[index];
+                            const span = document.createElement('span');
+                            span.textContent = word;
+                            span.className = 'text-primary char-fade inline-block';
+                            
+                            const spaceSpan = document.createElement('span');
+                            spaceSpan.innerHTML = '&nbsp;';
+                            spaceSpan.className = 'inline-block';
+                            
+                            heroTitleContainer.insertBefore(span, cursor);
+                            if (index < words.length - 1) {
+                                heroTitleContainer.insertBefore(spaceSpan, cursor);
+                            }
+                            
+                            requestAnimationFrame(() => {
+                                setTimeout(() => {
+                                    span.classList.remove('text-primary');
+                                    span.classList.add('text-text_light');
+                                }, 1200); // Fades to white after 1.2s to show beautiful red trail
+                            });
+                            
+                            index++;
+                            setTimeout(typeNextWord, 320); // Delay between words
+                        } else {
+                            setTimeout(() => {
+                                cursor.style.transition = 'opacity 1s ease';
+                                cursor.style.opacity = '0';
+                                setTimeout(() => cursor.remove(), 1000);
+                            }, 500);
+                        }
+                    }
+                    
+                    heroTitleContainer.appendChild(cursor);
+                    setTimeout(typeNextWord, 500);
+                }
+            }
+
+            // 5. Performance-optimized LERP-based Canvas Grid Glow
+            const canvas = document.getElementById('cyber-grid-canvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                
+                function resizeCanvas() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                }
+                window.addEventListener('resize', resizeCanvas);
+                resizeCanvas();
+                
+                const cellSize = 40;
+                const activeCells = new Map();
+                
+                let mouseX = -1000;
+                let mouseY = -1000;
+                let targetX = -1000;
+                let targetY = -1000;
+                let isMoving = false;
+                
+                window.addEventListener('mousemove', (e) => {
+                    targetX = e.clientX;
+                    targetY = e.clientY;
+                    if (!isMoving) {
+                        isMoving = true;
+                        mouseX = targetX;
+                        mouseY = targetY;
+                        document.body.classList.add('mouse-active');
+                    }
+                });
+                
+                window.addEventListener('mouseleave', () => {
+                    isMoving = false;
+                    targetX = -1000;
+                    targetY = -1000;
+                    document.body.classList.remove('mouse-active');
+                });
+                
+                function activateCell(col, row, intensity) {
+                    const cols = Math.ceil(canvas.width / cellSize);
+                    const rows = Math.ceil(canvas.height / cellSize);
+                    if (col < 0 || col >= cols || row < 0 || row >= rows) return;
+                    
+                    const key = `${col},${row}`;
+                    const current = activeCells.get(key);
+                    
+                    if (!current) {
+                        activeCells.set(key, { col, row, opacity: intensity });
+                    } else {
+                        current.opacity = Math.max(current.opacity, intensity);
+                    }
+                }
+                
+                function updateGridGlow() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    
+                    if (isMoving && targetX !== -1000) {
+                        const dx = targetX - mouseX;
+                        const dy = targetY - mouseY;
+                        
+                        mouseX += dx * 0.12;
+                        mouseY += dy * 0.12;
+                        
+                        const col = Math.floor(mouseX / cellSize);
+                        const row = Math.floor(mouseY / cellSize);
+                        
+                        activateCell(col, row, 1.0);
+                        activateCell(col - 1, row, 0.4);
+                        activateCell(col + 1, row, 0.4);
+                        activateCell(col, row - 1, 0.4);
+                        activateCell(col, row + 1, 0.4);
+                        
+                        activateCell(col - 1, row - 1, 0.15);
+                        activateCell(col + 1, row - 1, 0.15);
+                        activateCell(col - 1, row + 1, 0.15);
+                        activateCell(col + 1, row + 1, 0.15);
+                    }
+                    
+                    activeCells.forEach((cell, key) => {
+                        const x = cell.col * cellSize;
+                        const y = cell.row * cellSize;
+                        
+                        ctx.fillStyle = `rgba(229, 9, 20, ${cell.opacity * 0.12})`;
+                        ctx.fillRect(x + 1, y + 1, cellSize - 1, cellSize - 1);
+                        
+                        ctx.strokeStyle = `rgba(229, 9, 20, ${cell.opacity * 0.45})`;
+                        ctx.lineWidth = 1.5;
+                        ctx.strokeRect(x, y, cellSize, cellSize);
+                        
+                        cell.opacity -= 0.03;
+                        if (cell.opacity <= 0) {
+                            activeCells.delete(key);
+                        }
+                    });
+                    
+                    requestAnimationFrame(updateGridGlow);
+                }
+                requestAnimationFrame(updateGridGlow);
+            }
+
+            // 6. Staggered Scroll Reveal Observer Engine
+            const revealItems = document.querySelectorAll('.reveal-item');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target); // Unobserve to keep animate once revealed
+                    }
+                });
+            }, {
+                threshold: 0.05,
+                rootMargin: '0px 0px -60px 0px' // Trigger slightly before it enters the viewport
+            });
+
+            revealItems.forEach(item => {
+                revealObserver.observe(item);
+            });
+        });
+    </script>
+
+    <!-- Global Settings Hydration Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        try {
+          const res = await fetch('http://localhost:3000/public/settings');
+          const data = await res.json();
+          if (data?.data?.settings) {
+            const settings = data.data.settings;
+            
+            const formatUrl = (url, isPhone = false) => {
+              if (!url) return '#';
+              const clean = url.trim();
+              if (isPhone && /^[0-9+\-\s]+$/.test(clean)) {
+                return 'https://wa.me/' + clean.replace(/[^0-9]/g, '');
+              }
+              if (!clean.startsWith('http://') && !clean.startsWith('https://')) {
+                return 'https://' + clean;
+              }
+              return clean;
+            };
+
+            // Render Social Matrix
+            const socialContainer = document.getElementById('dynamic-social-matrix');
+            if (socialContainer) {
+              let socialHTML = '';
+              if (settings.showWhatsapp && settings.whatsappUrl) {
+                socialHTML += `<a href="${formatUrl(settings.whatsappUrl, true)}" target="_blank" class="w-8 h-8 rounded-lg bg-surface border border-border flex items-center justify-center text-text_muted hover:text-[#25D366] hover:border-[#25D366]/40 hover:shadow-[0_0_10px_rgba(37,211,102,0.3)] transition-all duration-300"><i class="fa-brands fa-whatsapp text-sm"></i></a>`;
+              }
+              if (settings.showFacebook && settings.facebookUrl) {
+                socialHTML += `<a href="${formatUrl(settings.facebookUrl)}" target="_blank" class="w-8 h-8 rounded-lg bg-surface border border-border flex items-center justify-center text-text_muted hover:text-[#1877F2] hover:border-[#1877F2]/40 hover:shadow-[0_0_10px_rgba(24,119,242,0.3)] transition-all duration-300"><i class="fa-brands fa-facebook-f text-xs"></i></a>`;
+              }
+              if (settings.showInstagram && settings.instagramUrl) {
+                socialHTML += `<a href="${formatUrl(settings.instagramUrl)}" target="_blank" class="w-8 h-8 rounded-lg bg-surface border border-border flex items-center justify-center text-text_muted hover:text-[#E1306C] hover:border-[#E1306C]/40 hover:shadow-[0_0_10px_rgba(225,48,108,0.3)] transition-all duration-300"><i class="fa-brands fa-instagram text-sm"></i></a>`;
+              }
+              if (settings.showSnapchat && settings.snapchatUrl) {
+                socialHTML += `<a href="${formatUrl(settings.snapchatUrl)}" target="_blank" class="w-8 h-8 rounded-lg bg-surface border border-border flex items-center justify-center text-text_muted hover:text-[#FFFC00] hover:border-[#FFFC00]/40 hover:shadow-[0_0_10px_rgba(255,252,0,0.3)] transition-all duration-300"><i class="fa-brands fa-snapchat text-sm"></i></a>`;
+              }
+              if (settings.showLinkedin && settings.linkedinUrl) {
+                socialHTML += `<a href="${formatUrl(settings.linkedinUrl)}" target="_blank" class="w-8 h-8 rounded-lg bg-surface border border-border flex items-center justify-center text-text_muted hover:text-[#0a66c2] hover:border-[#0a66c2]/40 hover:shadow-[0_0_10px_rgba(10,102,194,0.3)] transition-all duration-300"><i class="fa-brands fa-linkedin-in text-sm"></i></a>`;
+              }
+              socialContainer.innerHTML = socialHTML;
+            }
+
+            // Render Legal Credentials
+            if (settings.showLegalFooter) {
+              const legalContainer = document.getElementById('dynamic-legal-footer');
+              if (legalContainer) {
+                legalContainer.innerHTML = `
+                  <div class="mt-4 pt-4 border-t border-border/50 text-[10px] text-text_muted/70">
+                    <p>الرقم الضريبي: ${settings.taxNumber || 'غير مدرج'}</p>
+                    <p>السجل التجاري: ${settings.commercialRecord || 'غير مدرج'}</p>
+                  </div>
+                `;
+              }
+            }
+            
+            // Render Dynamic Phone/Email
+            if (settings.supportPhone) {
+                const phoneEl = document.getElementById('dynamic-support-phone');
+                if (phoneEl) {
+                    phoneEl.textContent = settings.supportPhone;
+                }
+            }
+            if (settings.supportEmail) {
+                const emailEl = document.getElementById('dynamic-support-email');
+                if (emailEl) {
+                    emailEl.textContent = settings.supportEmail;
+                }
+            }
+
+            // Bind Global WhatsApp Links (Pricing plans, etc.)
+            if (settings.showWhatsapp && settings.whatsappUrl) {
+                const dynamicWa = formatUrl(settings.whatsappUrl, true);
+                document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
+                    // Update any static whatsapp links (like in pricing)
+                    el.href = dynamicWa;
+                });
+            }
+
+          }
+        } catch (e) {
+          console.error('Failed to hydrate global settings:', e);
+        }
+      });
+    </script>
+</body>
+</html>
