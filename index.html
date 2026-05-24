@@ -664,6 +664,14 @@
                                             <span class="text-xs text-text_light font-semibold mr-1">ج.م / ${plan.durationInDays} يوم</span>
                                         </div>
                                         ${plan.description ? `<span class="text-[10px] text-text_muted block mt-1">${plan.description}</span>` : ''}
+                                        <div class="flex gap-2 mt-3 text-[10px] justify-start">
+                                            <span class="px-2 py-1 rounded bg-primary/10 border border-primary/20 text-primary font-bold">
+                                                ريسبشنست: ${plan.maxReceptionists ?? 1}
+                                            </span>
+                                            <span class="px-2 py-1 rounded bg-primary/10 border border-primary/20 text-primary font-bold">
+                                                كوتشز: ${plan.maxCoaches ?? 4}
+                                            </span>
+                                        </div>
                                     </div>
 
                                     <ul class="space-y-3.5 text-xs text-text_muted">

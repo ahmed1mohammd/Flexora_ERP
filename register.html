@@ -156,15 +156,13 @@
 
                     <!-- Pricing Package Select -->
                     <div class="col-md-6">
-                        <label for="tier" class="block text-xs font-bold text-text_light uppercase tracking-wider mb-2">باقة التشغيل المفضلة *</label>
+                        <label for="planId" class="block text-xs font-bold text-text_light uppercase tracking-wider mb-2">باقة التشغيل المفضلة *</label>
                         <div class="relative">
                             <span class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-text_muted">
                                 <i class="fa-solid fa-cubes"></i>
                             </span>
-                            <select id="tier" class="w-full pr-10 pl-4 py-3 rounded-lg border border-border bg-bg_main text-text_light text-sm form-glow transition-all appearance-none cursor-pointer">
-                                <option value="PREMIUM">PREMIUM (صالات صغيرة - لغاية 200 مشترك)</option>
-                                <option value="ELITE" selected>ELITE (صالات متوسطة - لغاية 600 مشترك)</option>
-                                <option value="ULTIMATE">ULTIMATE (صالات عملاقة - مشتركين غير محدودين)</option>
+                            <select id="planId" required class="w-full pr-10 pl-4 py-3 rounded-lg border border-border bg-bg_main text-text_light text-sm form-glow transition-all appearance-none cursor-pointer">
+                                <option value="" disabled selected>جاري تحميل باقات التشغيل المتاحة...</option>
                             </select>
                             <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-text_muted pointer-events-none">
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -235,10 +233,31 @@
     <!-- Core HTTP Communication Bridge (api.js) -->
     <script src="api.js"></script>
     <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
             const form = document.getElementById('registration-form');
             const submitBtn = document.getElementById('submit-btn');
             const btnText = document.getElementById('btn-text');
+
+            // Dynamic plans hydration
+            const loadSaasPlans = async () => {
+                const planSelect = document.getElementById('planId');
+                if (!planSelect) return;
+                try {
+                    const response = await window.FlexoraAPI.getPlans();
+                    const plans = response.data?.plans || [];
+                    planSelect.innerHTML = '<option value="" disabled selected>اختر باقة التشغيل...</option>';
+                    plans.forEach(plan => {
+                        const opt = document.createElement('option');
+                        opt.value = plan.id;
+                        opt.textContent = `${plan.planName} - ${plan.price} ج.م / ${plan.durationInDays} يوم (ريسبشنست: ${plan.maxReceptionists ?? 1}، كوتشز: ${plan.maxCoaches ?? 4})`;
+                        planSelect.appendChild(opt);
+                    });
+                } catch (err) {
+                    console.error('Failed to load saas plans:', err);
+                    planSelect.innerHTML = '<option value="" disabled>فشل تحميل الباقات من الخادم</option>';
+                }
+            };
+            await loadSaasPlans();
  
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
@@ -265,7 +284,7 @@
                     phone: document.getElementById('phone').value,
                     password: document.getElementById('password').value,
                     address: document.getElementById('address').value,
-                    tier: document.getElementById('tier').value,
+                    planId: document.getElementById('planId').value,
                     promoCode: document.getElementById('promoCode').value
                 };
  

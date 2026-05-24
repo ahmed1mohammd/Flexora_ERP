@@ -268,10 +268,14 @@
                         }
                     } else {
                         // Regular auth error (Incorrect credentials)
+                        let textMsg = error.message || 'بيانات الدخول المدخلة غير صحيحة.';
+                        if (textMsg === 'Incorrect email or password') {
+                            textMsg = 'البريد الإلكتروني أو كلمة المرور غير صحيحة. يرجى التحقق وإعادة المحاولة، أو الذهاب لتسجيل صالة رياضية جديدة إذا لم يكن لديك حساب بعد.';
+                        }
                         Swal.fire({
                             icon: 'error',
                             title: 'خطأ في المصادقة',
-                            text: error.message || 'بيانات الدخول المدخلة غير صحيحة.',
+                            text: textMsg,
                             confirmButtonText: 'إعادة المحاولة',
                             background: '#1A1A1A',
                             color: '#F5F5F5',
